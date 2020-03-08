@@ -13,3 +13,8 @@ class Defect(models.Model):
     zcoordinate = models.IntegerField(validators=[MinValueValidator(-1000), MaxValueValidator(1000)])
     defecttype = models.CharField(max_length=1, choices=DEFECT_TYPE)
     comment = models.CharField(max_length=600, null=True, blank=True)
+
+
+class MaintenanceState(models.Model):
+    is_maintenance = models.BooleanField(default=True)
+
