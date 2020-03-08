@@ -14,6 +14,11 @@ Clone this repository locally :
 git clone https://github.com/CCourbet/plane-defects.git
 ```
 
+Clone repository for front-end (or use the application .exe):
+``` bash
+https://github.com/CCourbet/plane-defects-frontend.git
+```
+
 ## Initialize backend
 
 Activate virtual env for django:
