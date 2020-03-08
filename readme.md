@@ -1,7 +1,9 @@
 # Introduction
 
 Application to report a plane defect, after authentication.
+
 Backend : Django with rest_framework
+
 Frontend : Angular 9
 
 ## Getting Started
@@ -23,7 +25,7 @@ source planeDefectsVenv/Scripts/activate
 
 Activate server:
 
-- **in a terminal window**
+- **in a terminal window** (to execute in planedefects folder)
 ``` bash
 python manage.py runserver
 ```
@@ -36,7 +38,7 @@ Install dependencies with npm :
 npm install
 ```
 
-Run application :
+Run application, two options :
 - **in a terminal window**
 
 ``` bash
