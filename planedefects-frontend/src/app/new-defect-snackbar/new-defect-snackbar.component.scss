@@ -1,0 +1,21 @@
+.row {
+  display: flex;
+
+  .description {
+    flex: 50%;
+    padding-right: 20px;
+
+    p {
+      padding-left: 20px;
+    }
+  }
+
+  .button-dismiss {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.panel {
+  max-width: 60%;
+}

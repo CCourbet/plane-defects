@@ -1,0 +1,48 @@
+<div *ngIf="isAdmin" aria-hidden="!isAdmin" class="maintenance">
+  <mat-checkbox class="example-margin" [(ngModel)]="isMaintenanceMode" (click)="updateMaintenanceMode()">
+    {{'MAINTENANCE_MODE' | translate}}
+  </mat-checkbox>
+  <mat-hint *ngIf="responseMaintenanceState">Hint</mat-hint>
+</div>
+
+<div class="form">
+  <h2 mat-dialog-title class="title">{{'DESCRIBE_YOUR_DEFECT' | translate }}</h2>
+  <form [formGroup]="defectForm" #formDirective="ngForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>{{'COORDINATE_X' | translate }}</mat-label>
+      <input matInput formControlName="xcoordinate" type="number" required>
+      <mat-error *ngIf="error?.xcoordinate">{{error.xcoordinate}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>{{'COORDINATE_Y' | translate }}</mat-label>
+      <input matInput formControlName="ycoordinate" type="number" required>
+      <mat-error *ngIf="error?.ycoordinate">{{error.ycoordinate}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>{{'COORDINATE_Z' | translate }}</mat-label>
+      <input matInput formControlName="zcoordinate" type="number" required>
+      <mat-error *ngIf="error?.zcoordinate">{{error.zcoordinate}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>{{'TYPE_OF_DEFECT' | translate }}</mat-label>
+      <mat-select formControlName="defectType" required>
+        <mat-option *ngFor="let defectType of DefectTypes | keyvalue" [value]="defectType.key">
+          {{defectType.value | translate}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="error?.defecttype">{{error.defecttype}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>{{'COMMENT' | translate }}</mat-label>
+      <textarea matInput formControlName="comment"></textarea>
+    </mat-form-field>
+
+    <div mat-dialog-actions class="submit">
+      <button mat-raised-button color="primary" type="submit">{{'SEND' | translate }}</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,26 @@
+<div class="authentication">
+  <mat-card class="mat-elevation-z8">
+    <form [formGroup]="authentication" (ngSubmit)="onSubmit()">
+      <mat-card-header class="header">
+        <mat-card-title>{{ 'LOGIN' | translate }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field class="widthAll">
+          <input matInput placeholder="{{'USERNAME' | translate}}" formControlName="username" required>
+        </mat-form-field>
+        <mat-form-field class="widthAll">
+          <input matInput placeholder="{{'PASSWORD' | translate}}" [type]="isHidden ? 'password' : 'text'"
+            formControlName="password" required>
+          <button mat-icon-button matSuffix type="button" (click)="isHidden = !isHidden" aria-label="'Hide password'"
+            aria-pressed="isHidden">
+            <mat-icon>{{isHidden ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        <p *ngIf="isLoginWrong" class="alert">{{'WRONG_USERNAME_OR_PASSWORD' | translate}}</p>
+      </mat-card-content>
+      <mat-card-actions class="footer">
+        <button mat-raised-button type="submit" [disabled]="!authentication.valid">{{'SUBMIT' | translate}}</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>

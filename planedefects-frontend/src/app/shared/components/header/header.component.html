@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>{{'PLANE DEFECT' | translate}}</span>
+    <span class="spacer"></span>
+    <button mat-button [matMenuTriggerFor]="menu">
+      {{activeLanguage}}
+      <mat-icon>arrow_drop_down</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item *ngFor="let language of Languages | keyvalue" (click)="setLanguage(language.key)">
+        {{language.value}}
+      </button>
+    </mat-menu>
+    <button *ngIf="isLoggedIn" matTooltip="{{'LOGOUT' | translate}}" mat-icon-button aria-hidden="!isLoggedIn"
+      aria-label="Logout" (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+    <button mat-icon-button matTooltip="{{'EXIT_APP' | translate}}" aria-label="Exit application" (click)="exitApp()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>

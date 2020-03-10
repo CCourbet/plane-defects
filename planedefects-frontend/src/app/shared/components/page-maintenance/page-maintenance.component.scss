@@ -1,0 +1,17 @@
+.maintenance {
+  width: 50%;
+  margin: 20px auto auto auto;
+  padding: 20px;
+  background-color: #fafafa;
+
+  .title {
+    text-align: center;
+  }
+  .content {
+    padding: 0 40px 40px 40px;
+  }
+  .image {
+    display: flex;
+    justify-content: center;
+  }
+}

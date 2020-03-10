@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="description">
+    <h3>{{'SUCCESS' | translate}}</h3>
+    <p>{{'COORDINATE_X' | translate}} : <b>{{data.xcoordinate}}</b></p>
+    <p>{{'COORDINATE_Y' | translate}} : <b>{{data.ycoordinate}}</b></p>
+    <p>{{'COORDINATE_Z' | translate}} : <b>{{data.zcoordinate}}</b></p>
+    <p>{{'TYPE_OF_DEFECT' | translate}} : <b>{{DefectTypes[data.defecttype] | translate}}</b></p>
+    <p *ngIf="data.comment">{{'COMMENT' | translate}} : {{data.comment}}</p>
+  </div>
+  <div class="button-dismiss">
+    <button mat-icon-button aria-label="close return message" color="accent" (click)="snackBarRef.dismiss()">
+      {{'CLOSE' | translate}}
+    </button>
+  </div>
+</div>
