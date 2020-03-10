@@ -45,4 +45,30 @@ npm start
 
 - **opening the application .exe**
 
+## Launch tests :
+
+For the frontend :
+``` bash
+npm run test
+```
+
+For the backend :
+``` bash
+python manage.py test
+```
+
+## Authentication :
+
+- **Admin**
+
+username : "admin"
+
+password : "admin"
+
+- **User** username :
+
+username : "user2"
+
+password : "WillRememberPassword1!"
+
 

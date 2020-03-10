@@ -10,6 +10,6 @@ urlpatterns = [
     path('', include('api.urls')),
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
-    path('auth/login/', obtain_jwt_token),
-    path('auth/refresh-token/', refresh_jwt_token),
+    path('auth/login/', obtain_jwt_token, name="login"),
+    path('auth/refresh-token/', refresh_jwt_token, name="refresh"),
 ]

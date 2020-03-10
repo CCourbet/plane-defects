@@ -9,5 +9,5 @@ router.register('defect', DefectViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     path('user/<int:pk>/', UserDetail.as_view()),
-    path('maintenance/', MaintenanceStateDetail.as_view()),
+    path('maintenance/', MaintenanceStateDetail.as_view(), name="maintenance"),
 ]
